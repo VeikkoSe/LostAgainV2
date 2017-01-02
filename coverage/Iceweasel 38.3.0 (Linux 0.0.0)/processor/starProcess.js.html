@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for processor/starProcess.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">processor/</a> starProcess.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.27% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/44</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.27% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/44</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="fstat-no" title="function not covered" >function starProcess(sb) {</span>
+    'use strict';
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var gl = sb.getGL();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var pointStartPositionsBuffer = gl.createBuffer();</span>
+<span class="cstat-no" title="statement not covered" >    var startPositions = [];</span>
+<span class="cstat-no" title="statement not covered" >    var colors = [];</span>
+<span class="cstat-no" title="statement not covered" >    var em = sb.getEntityManager();</span>
+<span class="cstat-no" title="statement not covered" >    var camera = sb.getCamera();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var shadermanager = sb.getShaderManager();</span>
+<span class="cstat-no" title="statement not covered" >    var program = shadermanager.useShader('star');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var numParticles = 1000;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var init = <span class="fstat-no" title="function not covered" >function() {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        gl.bindBuffer(gl.ARRAY_BUFFER, pointStartPositionsBuffer);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var color = [1, 1, 1, 1];</span>
+<span class="cstat-no" title="statement not covered" >        colors.push(color);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var color2 = [1, 1, 1, 2];</span>
+<span class="cstat-no" title="statement not covered" >        colors.push(color2);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var color3 = [Math.random() / 2 + 0.5, Math.random() / 2 + 0.5, Math.random() / 2 + 0.5, 1];</span>
+<span class="cstat-no" title="statement not covered" >        colors.push(color3);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var color4 = [Math.random() / 2 + 0.5, Math.random() / 2 + 0.5, Math.random() / 2 + 0.5, 1];</span>
+<span class="cstat-no" title="statement not covered" >        colors.push(color4);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; numParticles; i++) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            startPositions.push(randomBetween(-4000, 4000));</span>
+<span class="cstat-no" title="statement not covered" >            startPositions.push(randomBetween(-600, -500));</span>
+<span class="cstat-no" title="statement not covered" >            startPositions.push(randomBetween(-4000, 4000));</span>
+            //pointsize
+<span class="cstat-no" title="statement not covered" >            startPositions.push(randomBetween(1, 1));</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(startPositions), gl.STATIC_DRAW);</span>
+&nbsp;
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var randomBetween = <span class="fstat-no" title="function not covered" >function(min, max) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (min &lt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            return min + Math.random() * (Math.abs(min) + max);</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return min + Math.random() * max;</span>
+        }
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var draw = <span class="fstat-no" title="function not covered" >function(le) {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (le.components.StarComponent) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var mvMatrix = camera.getMVMatrix();</span>
+            // sm.setProgram(starProgram);
+<span class="cstat-no" title="statement not covered" >            shadermanager.setProgram(program);</span>
+<span class="cstat-no" title="statement not covered" >            camera.mvPushMatrix();</span>
+            //gl.uniform3fv(program.uCameraPos, [camera.getXPos(), camera.getYPos(), camera.getZPos()]);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            gl.bindBuffer(gl.ARRAY_BUFFER, pointStartPositionsBuffer);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            gl.vertexAttribPointer(program.aVertexPosition, 3, gl.FLOAT, false, 16, 0);</span>
+<span class="cstat-no" title="statement not covered" >            gl.vertexAttribPointer(program.aPointSize, 1, gl.FLOAT, false, 16, 12);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            gl.uniformMatrix4fv(program.uPMatrix, false, camera.getPMatrix());</span>
+<span class="cstat-no" title="statement not covered" >            gl.uniformMatrix4fv(program.uMVMatrix, false, mvMatrix);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            gl.drawArrays(gl.POINTS, 0, numParticles);</span>
+<span class="cstat-no" title="statement not covered" >            camera.addDrawCall();</span>
+<span class="cstat-no" title="statement not covered" >            camera.mvPopMatrix();</span>
+        }
+&nbsp;
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return Object.freeze({</span>
+        draw, update: <span class="fstat-no" title="function not covered" >function() {</span>
+        }, init
+    });
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Nov 03 2015 02:00:43 GMT+0200 (EET)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

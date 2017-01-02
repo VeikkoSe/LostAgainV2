@@ -1,0 +1,47 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/out/src/State/GameState.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Component/CollisionComponent.js" />
+      <root url="file://$PROJECT_DIR$/out/src/State/LoadState.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Processor/TeleportProcess.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Common/Laser.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Processor/StarProcess.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Processor/TextProcess2d.js" />
+      <root url="file://$PROJECT_DIR$/out/src/State/MenuState.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Component/ExhaustComponent.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Processor/LaserProcess.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Common/Audio.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Processor/LayoutProcess.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Common/Sandbox.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Processor/ExhaustProcess.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Processor/ExplosionProcess.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Processor/GunProcess.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Common/ShaderManager.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Common/Sprite.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Processor/PrimitiveProcess.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Common/StateEngine.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Common/Text.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Processor/MomentumMovementProcess.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Processor/PostProcess.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Common/Core_opengl.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Common/Camera.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Component/ShieldComponent.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Common/AsteroidExplosion.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Component/Renderable.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Component/LaserComponent.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Processor/CollisionProcess.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Processor/CameraControllerProcess.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Processor/AsteroidRenderProcess.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Common/Loader.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Component/MomentumMovable.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Component/JumpArea.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Component/HealthComponent.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Processor/RenderProcess.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Common/Texture.js" />
+      <root url="file://$PROJECT_DIR$/out/src/State/IntroState.js" />
+      <root url="file://$PROJECT_DIR$/out/src/Common/functions.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

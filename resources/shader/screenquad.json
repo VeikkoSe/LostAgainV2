@@ -1,0 +1,47 @@
+{
+  "name": "screenquad",
+  "fs": [
+    "precision mediump float;",
+    "uniform sampler2D uSampler;",
+    "varying vec2 vTexCoords;",
+    "void main()",
+    "{",
+      "  vec4 normalColor = texture2D(uSampler, vTexCoords);",
+      "  float gray = 0.299*normalColor.r + 0.587*normalColor.g + 0.114*normalColor.b;",
+      "  //gl_FragColor =vec4(normalColor.r, normalColor.g, normalColor.b, normalColor.a);",
+      "  gl_FragColor = vec4(gray,gray,gray,normalColor.a);",
+    "}"
+  ],
+  "vs": [
+    "precision lowp float;",
+    "attribute vec2 aVertexPosition;",
+    "varying vec2 vTexCoords;",
+    "const vec2 scale = vec2(0.5, 0.5);",
+    "void main()",
+    "{",
+    "  vTexCoords  = aVertexPosition * scale + scale; // scale vertex attribute to [0,1] range",
+    "  gl_Position = vec4(aVertexPosition, 0.0, 1.0);",
+    "}"
+  ],
+  "uniforms": [
+    {
+      "uSampler": "sampler2D"
+    }
+  ],
+  "attributes": [
+    {
+      "aVertexPosition": "vec3"
+    }
+  ]
+}
+
+
+
+
+
+
+
+
+
+
+

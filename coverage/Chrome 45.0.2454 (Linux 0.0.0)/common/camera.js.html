@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/camera.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">common/</a> camera.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">1.16% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/86</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/27</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">1.16% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/86</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="fstat-no" title="function not covered" >function camera(resolutionWidth, resolutionHeight,helpers) {</span>
+    'use strict';
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var mvMatrix, pMatrix, cMatrix, pvMatrix,</span>
+        pvMatrixInverse, mvMatrixStack, drawCalls,
+        distance, x, y, z, rotationX, rotationY,
+        slideLeft, slideRight,
+        slideUp, slideDown, centerPosition,
+        home, pitch, mindistance, maxdistance;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var init = <span class="fstat-no" title="function not covered" >function(sandbox) {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        mvMatrix = mat4.create();</span>
+<span class="cstat-no" title="statement not covered" >        pMatrix = mat4.create();</span>
+<span class="cstat-no" title="statement not covered" >        cMatrix = mat4.create();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        pvMatrix = mat4.create();</span>
+<span class="cstat-no" title="statement not covered" >        pvMatrixInverse = mat4.create();</span>
+<span class="cstat-no" title="statement not covered" >        mindistance = 40;</span>
+<span class="cstat-no" title="statement not covered" >        maxdistance = 200;</span>
+<span class="cstat-no" title="statement not covered" >        distance = 120;</span>
+<span class="cstat-no" title="statement not covered" >        pitch = 70;</span>
+&nbsp;
+        //mat4.identity(mvMatrix);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        x = 0;</span>
+<span class="cstat-no" title="statement not covered" >        z = 70;</span>
+<span class="cstat-no" title="statement not covered" >        y = Math.tan(pitch * (Math.PI / 180)) * z;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        home = [x, y, z];</span>
+&nbsp;
+        //mat4.translate(mvMatrix, home);
+&nbsp;
+        //Initialize Camera matrix as the inverse of the Model-View Matrix
+        //mat4.identity(cMatrix);
+        //mat4.inverse(mvMatrix, cMatrix);
+&nbsp;
+        //Initialize Perspective matrix
+<span class="cstat-no" title="statement not covered" >        mat4.identity(pMatrix);</span>
+<span class="cstat-no" title="statement not covered" >        drawCalls = 0;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        mvMatrixStack = [];</span>
+        //eye = vec3.create([0, 0, 0]);  // negation of actual eye position
+        //var clickPosition = null;
+&nbsp;
+        //initial pos
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        rotationY = 0;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        slideLeft = false;</span>
+<span class="cstat-no" title="statement not covered" >        slideRight = false;</span>
+<span class="cstat-no" title="statement not covered" >        slideUp = false;</span>
+<span class="cstat-no" title="statement not covered" >        slideDown = false;</span>
+&nbsp;
+        //this.rotation = 0;
+<span class="cstat-no" title="statement not covered" >        centerPosition = false;</span>
+&nbsp;
+        //mat4.lookAt([x,y,z],[0,0,0],[0,1,0],mvMatrix);
+&nbsp;
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var setDistance = <span class="fstat-no" title="function not covered" >function(d) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (d.charAt(0) === '-') {</span>
+<span class="cstat-no" title="statement not covered" >            if (distance &lt;= mindistance) {</span>
+<span class="cstat-no" title="statement not covered" >                distance = mindistance;</span>
+<span class="cstat-no" title="statement not covered" >                return;</span>
+            }
+<span class="cstat-no" title="statement not covered" >            distance -= parseInt(d.substring(1), 10);</span>
+        }
+        else {
+<span class="cstat-no" title="statement not covered" >            if (distance &gt;= maxdistance) {</span>
+<span class="cstat-no" title="statement not covered" >                distance = maxdistance;</span>
+<span class="cstat-no" title="statement not covered" >                return;</span>
+            }
+<span class="cstat-no" title="statement not covered" >            distance += parseInt(d, 10);</span>
+        }
+&nbsp;
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var setXRotation = <span class="fstat-no" title="function not covered" >function(rot) {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        rotationX = rot;</span>
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var setYRotation = <span class="fstat-no" title="function not covered" >function(rot) {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (rot.charAt(0) === '-') {</span>
+<span class="cstat-no" title="statement not covered" >            rotationY -= helpers.degToRad(parseInt(rot.substring(1), 10));</span>
+        }
+        else {
+<span class="cstat-no" title="statement not covered" >            rotationY += helpers.degToRad(parseInt(rot, 10));</span>
+        }
+    };
+<span class="cstat-no" title="statement not covered" >    var getYRotation = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >        return rotationY;</span>
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var setPos = <span class="fstat-no" title="function not covered" >function(xp, yp, zp) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (xp) {</span>
+<span class="cstat-no" title="statement not covered" >            if (xp.charAt(0) === '-') {</span>
+<span class="cstat-no" title="statement not covered" >                x = parseInt(xp.substring(1), 10);</span>
+            }
+            else {
+<span class="cstat-no" title="statement not covered" >                x = parseInt(xp, 10);</span>
+            }
+        }
+<span class="cstat-no" title="statement not covered" >        if (yp) {</span>
+<span class="cstat-no" title="statement not covered" >            if (yp.charAt(0) === '-') {</span>
+<span class="cstat-no" title="statement not covered" >                y = parseInt(yp.substring(1), 10);</span>
+            }
+            else {
+<span class="cstat-no" title="statement not covered" >                y = parseInt(yp, 10);</span>
+            }
+        }
+<span class="cstat-no" title="statement not covered" >        if (zp) {</span>
+<span class="cstat-no" title="statement not covered" >            if (zp.charAt(0) === '-') {</span>
+<span class="cstat-no" title="statement not covered" >                z = parseInt(zp.substring(1), 10);</span>
+            }
+            else {
+<span class="cstat-no" title="statement not covered" >                z = parseInt(zp, 10);</span>
+            }
+        }
+        //rotation = rot;
+        //distance = z;
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var setPerspective = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >        mat4.perspective(60, resolutionWidth / resolutionHeight, 0.1, 20000.0, pMatrix);</span>
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var lookAt = <span class="fstat-no" title="function not covered" >function(epos, direction) {</span></span>
+<span class="cstat-no" title="statement not covered" >        mat4.lookAt([x, y, z], epos, direction, mvMatrix);</span>
+    };
+<span class="cstat-no" title="statement not covered" >    var move = <span class="fstat-no" title="function not covered" >function() {</span></span>
+&nbsp;
+        // mat4.identity(mvMatrix);
+        //orbit camera rotate before translate
+        //tracking camera translate before rotate
+        // mat4.rotate(mvMatrix, rotationX, [1, 0, 0]);
+        // mat4.rotate(mvMatrix, rotationY, [0, 1, 0]);
+        //mat4.translate(mvMatrix, [x, y, z]);
+        //mat4.lookAt([0,30,-30],[0,0,0],[0,1,0],mvMatrix);
+        //mat4.rotate(mvMatrix, rotationY, [0, 1, 0]);
+&nbsp;
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var mvPushMatrix = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >        var copy = mat4.create();</span>
+<span class="cstat-no" title="statement not covered" >        mat4.set(mvMatrix, copy);</span>
+<span class="cstat-no" title="statement not covered" >        mvMatrixStack.push(copy);</span>
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var mvPopMatrix = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (mvMatrixStack.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >            throw 'Invalid popMatrix!';</span>
+        }
+<span class="cstat-no" title="statement not covered" >        mvMatrix = mvMatrixStack.pop();</span>
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var subscribe = <span class="fstat-no" title="function not covered" >function() {</span></span>
+&nbsp;
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var addDrawCall = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >        drawCalls++;</span>
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return Object.freeze({</span>
+        mvPopMatrix,
+        mvPushMatrix,
+        setPerspective,
+        setDistance,
+        lookAt,
+        init,
+        setXRotation,
+        setYRotation,
+        getYRotation,
+        getMVMatrix: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >            return mvMatrix;</span>
+        },
+        getPMatrix: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >            return pMatrix;</span>
+        },
+        move,
+        getXPos: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >            return x;</span>
+        },
+        getYPos: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >            return y;</span>
+        },
+        getZPos: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >            return z;</span>
+        },
+        getMinDistance: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >            return mindistance;</span>
+        },
+&nbsp;
+        setXPos: <span class="fstat-no" title="function not covered" >function(v) {</span>
+<span class="cstat-no" title="statement not covered" >            x = v;</span>
+        },
+        setYPos: <span class="fstat-no" title="function not covered" >function(v) {</span>
+<span class="cstat-no" title="statement not covered" >            y = v;</span>
+        },
+        setZPos: <span class="fstat-no" title="function not covered" >function(v) {</span>
+<span class="cstat-no" title="statement not covered" >            z = v;</span>
+        },
+        getPitch: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >            return pitch;</span>
+        },
+        setPos,
+        subscribe,
+&nbsp;
+        getDistance: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >            return distance;</span>
+        },
+        addDrawCall,
+        getDrawCalls: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >            return drawCalls;</span>
+&nbsp;
+        },
+        resetDrawCalls: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >            drawCalls = 0;</span>
+&nbsp;
+        }
+&nbsp;
+    });
+&nbsp;
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Nov 03 2015 02:52:35 GMT+0200 (EET)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

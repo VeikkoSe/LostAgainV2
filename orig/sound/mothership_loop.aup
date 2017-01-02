@@ -1,0 +1,57 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="mothership_loop_data" version="1.3.0" audacityversion="2.0.6" sel0="1.2538775510" sel1="1.2538775510" vpos="0" h="0.0000000000" zoom="43.0664062500" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds">
+	<tags/>
+	<wavetrack name="270598__hoerspielwerkstatt-hef__spaceship-rumble-bg" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="96021">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000e08.au" len="96021" min="-0.112971" max="0.095406" rms="0.016855"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="270598__hoerspielwerkstatt-hef__spaceship-rumble-bg" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="96021">
+				<waveblock start="0">
+					<simpleblockfile filename="e00009cc.au" len="96021" min="-0.075799" max="0.09493" rms="0.015832"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="270598__hoerspielwerkstatt-hef__spaceship-rumble-bg" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="479237">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000d01.au" len="125952" min="-0.093445" max="0.103302" rms="0.021745"/>
+				</waveblock>
+				<waveblock start="125952">
+					<simpleblockfile filename="e00007ba.au" len="176642" min="-0.107574" max="0.113983" rms="0.031763"/>
+				</waveblock>
+				<waveblock start="302594">
+					<simpleblockfile filename="e0000059.au" len="176643" min="-0.09964" max="0.121857" rms="0.032291"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="270598__hoerspielwerkstatt-hef__spaceship-rumble-bg" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="479237">
+				<waveblock start="0">
+					<simpleblockfile filename="e00008b3.au" len="125952" min="-0.125946" max="0.121521" rms="0.022066"/>
+				</waveblock>
+				<waveblock start="125952">
+					<simpleblockfile filename="e00001ca.au" len="176642" min="-0.113983" max="0.123108" rms="0.031578"/>
+				</waveblock>
+				<waveblock start="302594">
+					<simpleblockfile filename="e000063d.au" len="176643" min="-0.108124" max="0.114594" rms="0.030135"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

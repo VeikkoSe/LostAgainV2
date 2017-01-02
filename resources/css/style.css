@@ -1,0 +1,85 @@
+
+#bottom {
+
+}
+body {
+    paddin:0;
+    margin:0;
+
+
+}
+#fps {
+    float:left;
+    color:white;
+
+}
+#fpsLabel {
+float:left;
+}
+
+#resolutionHolder {
+    clear:both;
+}
+
+ html, body {
+     padding: 0px;
+     margin: 0px;
+     width: 100%;
+     height: 100%;
+     overflow: hidden;
+     background-color: #000000;
+ }
+
+#canvasHolder {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+}
+
+.matrixdisplay {
+
+    width:500px;
+    margin:5px;
+    border:1px solid black;
+}
+.matrixdisplay td {
+    width:100px;
+}
+#canvas {
+    align-self: center;
+
+}
+
+#options {
+    color: #ffffff;
+    padding: 20px;
+
+
+    position: fixed;
+    top: 0px;
+    right: -380px;
+    bottom: 0px;
+    width: 400px;
+
+    -webkit-transition: right 0.2s ease-out;
+    -moz-transition: right 0.2s ease-out;
+    transition: right 0.2s ease-out;
+
+    cursor: pointer;
+    background-color: cornflowerblue;
+
+}
+
+
+.soundon {
+    background: url('../image/soundon.png') 0 0;
+}
+
+.soundoff {
+    background: url('../image/soundoff.png') 0 0;
+}
+
+.soundoff,.soundon {
+    width:128px;
+    height:128px;
+}

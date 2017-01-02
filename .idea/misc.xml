@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="JS_1_5" />
+  </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/resources/model/bigbullet.json" />
+    <file url="file://$PROJECT_DIR$/resources/model/end.json" />
+    <file url="file://$PROJECT_DIR$/resources/model/ship.json" />
+    <file url="file://$PROJECT_DIR$/resources/model/stars.json" />
+    <file url="file://$PROJECT_DIR$/resources/model/start.json" />
+  </component>
+</project>

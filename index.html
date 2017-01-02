@@ -1,0 +1,104 @@
+<html>
+
+<head>
+    <title>Lost Again</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf8">
+    <link href="resources/css/style.css" type="text/css" rel="stylesheet"/>
+
+
+</head>
+<body>
+<div id="canvasHolder">
+    <canvas id="canvas"></canvas>
+</div>
+
+
+<div id="mp"></div>
+
+<div id="options">
+    <p>
+    <div class="soundoff" id="soundtoggle"></div>
+    <h3>Sound</h3>
+    <div>
+        <label for="masterVolume">Master volume: </label><input value="0.5" id="masterVolume" min="0" max="1" step="0.1"
+                                                                type="range"/>
+    </div>
+    <div>
+        <label for="musicVolume">Music volume: </label><input value="0.1" id="musicVolume" min="0" max="0.25"
+                                                              step="0.05" type="range"/>
+    </div>
+    <div>
+        <label for="effectsVolume">Effects volume: </label><input value="0.5" id="effectsVolume" min="0" max="1"
+                                                                  step="0.1" type="range"/>
+    </div>
+    <h3>General</h3>
+    <div><span><label id="fpsLabel">FPS:&nbsp;</label></span><span id="fps"></span></div>
+    <div id="resolutionHolder"><label>Resolution:&nbsp;</label><select id="resolution">
+        <option value="512">512*512</option>
+        <option selected value="1024">1024*1024</option>
+    </select></div>
+    <div><input type="button" id="saveResolution" value="Save settings"/></div>
+</div>
+
+
+<script src="lib/glMatrix-0.9.5.min.js"></script>
+<script src="lib/webgl-utils.js"></script>
+<script src="lib/webgl-debug.js"></script>
+
+
+<script src="src/core/GAME.js"></script>
+<script src="src/core/SETV.js"></script>
+
+<script src="src/core/Helpers.js"></script>
+<script src="src/core/Audio.js"></script>
+<script src="src/core/Text.js"></script>
+<script src="src/core/AssetManager.js"></script>
+<script src="src/core/EntityManager.js"></script>
+<script src="src/core/GLV.js"></script>
+<script src="src/core/Loader.js"></script>
+<script src="src/core/ActionMapper.js"></script>
+<script src="src/core/Camera.js"></script>
+<script src="src/state/GameState.js"></script>
+<script src="src/core/StateEngine.js"></script>
+<script src="src/core/Material.js"></script>
+<script src="src/core/Entity.js"></script>
+<script src="src/core/MeshRenderer.js"></script>
+
+
+
+
+<script src="src/component/ModelComponent.js"></script>
+<script src="src/component/SoundComponent.js"></script>
+<script src="src/component/MusicComponent.js"></script>
+<script src="src/component/RenderableComponent.js"></script>
+<script src="src/component/TextComponent.js"></script>
+<script src="src/component/CollisionComponent.js"></script>
+<script src="src/component/SteeringComponent.js"></script>
+<script src="src/component/RespawnComponent.js"></script>
+<script src="src/component/ShieldComponent.js"></script>
+<script src="src/component/ScoreComponent.js"></script>
+<script src="src/component/HealthComponent.js"></script>
+<script src="src/component/GunComponent.js"></script>
+<script src="src/component/CollisionComponent.js"></script>
+<script src="src/component/LayoutComponent.js"></script>
+<script src="src/component/JumpAreaComponent.js"></script>
+<script src="src/component/ShipMovementComponent.js"></script>
+
+<script src="src/process/CollisionProcess.js"></script>
+<script src="src/process/ScoreProcess.js"></script>
+<script src="src/process/ShieldProcess.js"></script>
+<script src="src/process/ShipMovementProcess.js"></script>
+<script src="src/process/SteeringProcess.js"></script>
+<script src="src/process/TeleportProcess.js"></script>
+<script src="src/process/RenderProcess.js"></script>
+<script src="src/process/FPSCameraControllerProcess.js"></script>
+<script src="src/process/Text2DProcess.js"></script>
+<script src="src/process/Text3DProcess.js"></script>
+<script src="src/process/LayoutProcess.js"></script>
+<script src="src/start.js"></script>
+
+
+</body>
+</html>
+

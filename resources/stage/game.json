@@ -1,0 +1,140 @@
+{
+  "name": "game",
+  "shaders": [
+    "screenquad"
+  ],
+  "font": "base",
+  "entities": [
+
+    {
+      "name": "music",
+      "components": [
+        {
+          "name": "MusicComponent",
+          "data": {
+            "clips": [
+              "150413_Processed_Results---free_download",
+              "150413_Crime_Lab---free_download",
+              "150413_Weird_Electro---free_download",
+              "150413_World_Spinning---free_download",
+              "150413_Victory_Gaze---free_download"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "ship",
+      "components": [
+        {
+          "name": "SoundComponent",
+          "data": {
+            "clips": {
+              "laser1": "cut_248293__chocobaggy__weird-laser-gun_gainmodified",
+              "laser2": "174459__yottasounds__laser-003",
+              "laser3": "28917__junggle__btn107",
+              "mothershipMotor": "mothership_loop",
+              "explosion": "80401__steveygos93__explosion2_gainmodified"
+            }
+          }
+        },
+        {
+          "name": "ModelComponent",
+          "data": {
+            "mesh": "ship",
+            "shader": "per-fragment-lighting",
+            "texture": "ship"
+          }
+        },
+        {
+          "name": "RenderableComponent",
+          "data": {
+            "angleX": 0,
+            "angleY": 0,
+            "angleZ": 0,
+            "xPos": 0,
+            "yPos": 0,
+            "zPos": 0,
+            "scale": 1,
+            "xWidth": 5,
+            "yWidth": 5,
+            "zWidth": 5
+          }
+        },
+        {
+          "name": "ShipMovementComponent",
+          "data": {
+            "turnSpeed": 5,
+            "maxSpeed": 50,
+            "acceleration": 20,
+            "accelerationOn": 0,
+            "rotateLeft": 0,
+            "rotateRight": 0,
+            "velocityX": 0,
+            "velocityY": 0,
+            "velocityZ": 0
+          }
+        },
+        {
+          "name": "ShieldComponent",
+          "data": {
+            "max": 10,
+            "lastHit" : 0,
+            "lastShieldAdded" : 0,
+            "amount" :20,
+            "scale" : 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "mothership",
+      "components": [
+        {
+          "name": "ModelComponent",
+          "data": {
+            "mesh": "mothership",
+            "shader": "per-fragment-lighting",
+            "texture": "mothership"
+          }
+        },
+        {
+          "name": "JumpAreaComponent",
+          "data": {
+            "radius" :300,
+            "pointAmount" : 200,
+            "xPos" : 0,
+            "yPos" : 0,
+            "zPos" : 0,
+            "visible" : "true"
+
+          }
+        },
+        {
+          "name": "SteeringComponent",
+          "data": {
+            "turnRadius" :300,
+            "speed" : 200,
+            "rateOfAcceleration" : 0
+          }
+        },
+        {
+          "name": "RenderableComponent",
+          "data": {
+            "angleX": 0,
+            "angleY": 0,
+            "angleZ": 0,
+            "xPos": 0,
+            "yPos": 97,
+            "zPos": 0,
+            "scale": 1,
+            "xWidth": 5,
+            "yWidth": 5,
+            "zWidth": 5
+          }
+        }
+      ]
+    }
+
+  ]
+}

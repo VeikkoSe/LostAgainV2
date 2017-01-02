@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/mesh.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">common/</a> mesh.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0.98% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/102</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0.98% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/102</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="fstat-no" title="function not covered" >function mesh(gl, pubsub, textureCreator) {</span>
+    'use strict';
+    // var {name,game} = params;
+    //var sb = sandbox;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var createNormals = <span class="fstat-no" title="function not covered" >function(vs, ind) {</span></span>
+<span class="cstat-no" title="statement not covered" >        var x = 0;</span>
+<span class="cstat-no" title="statement not covered" >        var y = 1;</span>
+<span class="cstat-no" title="statement not covered" >        var z = 2;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var ns = [];</span>
+<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; vs.length; i++) { //for each vertex, initialize normal x, normal y, normal z</span>
+<span class="cstat-no" title="statement not covered" >            ns[i] = 0.0;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; ind.length; i = i + 3) { //we work on triads of vertices to calculate normals so i = i+3 (i = indices index)</span>
+<span class="cstat-no" title="statement not covered" >            var v1 = [];</span>
+<span class="cstat-no" title="statement not covered" >            var v2 = [];</span>
+<span class="cstat-no" title="statement not covered" >            var normal = [];</span>
+            //p1 - p0
+<span class="cstat-no" title="statement not covered" >            v1[x] = vs[3 * ind[i + 1] + x] - vs[3 * ind[i] + x];</span>
+<span class="cstat-no" title="statement not covered" >            v1[y] = vs[3 * ind[i + 1] + y] - vs[3 * ind[i] + y];</span>
+<span class="cstat-no" title="statement not covered" >            v1[z] = vs[3 * ind[i + 1] + z] - vs[3 * ind[i] + z];</span>
+            // p0 - p1
+<span class="cstat-no" title="statement not covered" >            v2[x] = vs[3 * ind[i + 2] + x] - vs[3 * ind[i + 1] + x];</span>
+<span class="cstat-no" title="statement not covered" >            v2[y] = vs[3 * ind[i + 2] + y] - vs[3 * ind[i + 1] + y];</span>
+<span class="cstat-no" title="statement not covered" >            v2[z] = vs[3 * ind[i + 2] + z] - vs[3 * ind[i + 1] + z];</span>
+            //p2 - p1
+            // v1[x] = vs[3*ind[i+2]+x] - vs[3*ind[i+1]+x];
+            // v1[y] = vs[3*ind[i+2]+y] - vs[3*ind[i+1]+y];
+            // v1[z] = vs[3*ind[i+2]+z] - vs[3*ind[i+1]+z];
+            // p0 - p1
+            // v2[x] = vs[3*ind[i]+x] - vs[3*ind[i+1]+x];
+            // v2[y] = vs[3*ind[i]+y] - vs[3*ind[i+1]+y];
+            // v2[z] = vs[3*ind[i]+z] - vs[3*ind[i+1]+z];
+            //cross product by Sarrus Rule
+<span class="cstat-no" title="statement not covered" >            normal[x] = v1[y] * v2[z] - v1[z] * v2[y];</span>
+<span class="cstat-no" title="statement not covered" >            normal[y] = v1[z] * v2[x] - v1[x] * v2[z];</span>
+<span class="cstat-no" title="statement not covered" >            normal[z] = v1[x] * v2[y] - v1[y] * v2[x];</span>
+&nbsp;
+            // ns[3*ind[i]+x] += normal[x];
+            // ns[3*ind[i]+y] += normal[y];
+            // ns[3*ind[i]+z] += normal[z];
+<span class="cstat-no" title="statement not covered" >            for (var j = 0; j &lt; 3; j++) { //update the normals of that triangle: sum of vectors</span>
+<span class="cstat-no" title="statement not covered" >                ns[3 * ind[i + j] + x] = ns[3 * ind[i + j] + x] + normal[x];</span>
+<span class="cstat-no" title="statement not covered" >                ns[3 * ind[i + j] + y] = ns[3 * ind[i + j] + y] + normal[y];</span>
+<span class="cstat-no" title="statement not covered" >                ns[3 * ind[i + j] + z] = ns[3 * ind[i + j] + z] + normal[z];</span>
+            }
+        }
+        //normalize the result
+<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; vs.length; i = i + 3) { //the increment here is because each vertex occurs with an offset of 3 in the array (due to x, y, z contiguous values)</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var nn = [];</span>
+<span class="cstat-no" title="statement not covered" >            nn[x] = ns[i + x];</span>
+<span class="cstat-no" title="statement not covered" >            nn[y] = ns[i + y];</span>
+<span class="cstat-no" title="statement not covered" >            nn[z] = ns[i + z];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var len = Math.sqrt((nn[x] * nn[x]) + (nn[y] * nn[y]) + (nn[z] * nn[z]));</span>
+<span class="cstat-no" title="statement not covered" >            if (len === 0) {</span>
+<span class="cstat-no" title="statement not covered" >                len = 0.00001;</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            nn[x] = nn[x] / len;</span>
+<span class="cstat-no" title="statement not covered" >            nn[y] = nn[y] / len;</span>
+<span class="cstat-no" title="statement not covered" >            nn[z] = nn[z] / len;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            ns[i + x] = nn[x];</span>
+<span class="cstat-no" title="statement not covered" >            ns[i + y] = nn[y];</span>
+<span class="cstat-no" title="statement not covered" >            ns[i + z] = nn[z];</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return ns;</span>
+    };
+&nbsp;
+    // immutable (see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze)
+<span class="cstat-no" title="statement not covered" >    return {</span>
+&nbsp;
+        load: <span class="fstat-no" title="function not covered" >function(name) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var vertices = [];</span>
+<span class="cstat-no" title="statement not covered" >            var texturecoordinates = [];</span>
+<span class="cstat-no" title="statement not covered" >            var normals = [];</span>
+<span class="cstat-no" title="statement not covered" >            var indices = [];</span>
+<span class="cstat-no" title="statement not covered" >            var xPos = 0;</span>
+<span class="cstat-no" title="statement not covered" >            var yPos = 0;</span>
+<span class="cstat-no" title="statement not covered" >            var zPos = 0;</span>
+            //var gl = sb.getGL();
+&nbsp;
+            //
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var ambient = null;</span>
+<span class="cstat-no" title="statement not covered" >            var diffuse = null;</span>
+<span class="cstat-no" title="statement not covered" >            var specular = null;</span>
+<span class="cstat-no" title="statement not covered" >            var texture = null;</span>
+&nbsp;
+            //var rotation = 0;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var vertexPositionBuffer = gl.createBuffer();</span>
+<span class="cstat-no" title="statement not covered" >            var texturePositionBuffer = gl.createBuffer();</span>
+<span class="cstat-no" title="statement not covered" >            var indexPositionBuffer = gl.createBuffer();</span>
+<span class="cstat-no" title="statement not covered" >            var normalPositionBuffer = gl.createBuffer();</span>
+&nbsp;
+            //loadMesh();
+&nbsp;
+            //var t = new Texture(this.name);
+&nbsp;
+            //this.texture = t.loadedTexture;
+            //this.textureLoaded = t.loaded;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var inputData = <span class="fstat-no" title="function not covered" >function(data) {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                var d = JSON.parse(data);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                vertices = d.vertices;</span>
+<span class="cstat-no" title="statement not covered" >                texturecoordinates = d.texturecoordinates;</span>
+<span class="cstat-no" title="statement not covered" >                indices = d.indices;</span>
+&nbsp;
+                //if (d.normals.length &lt; 1) {
+<span class="cstat-no" title="statement not covered" >                normals = createNormals(vertices, indices);</span>
+                //}
+                //else {
+                //    this.normals = d.normals;
+                //}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                xPos = d.x;</span>
+<span class="cstat-no" title="statement not covered" >                yPos = d.y;</span>
+<span class="cstat-no" title="statement not covered" >                zPos = d.z;</span>
+                //this.batch = d.batch;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                ambient = d.ambient;</span>
+<span class="cstat-no" title="statement not covered" >                diffuse = d.diffuse;</span>
+<span class="cstat-no" title="statement not covered" >                specular = d.specular;</span>
+&nbsp;
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var buildBuffers = <span class="fstat-no" title="function not covered" >function() {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                gl.bindBuffer(gl.ARRAY_BUFFER, vertexPositionBuffer);</span>
+<span class="cstat-no" title="statement not covered" >                gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);</span>
+<span class="cstat-no" title="statement not covered" >                vertexPositionBuffer.itemSize = 3;</span>
+<span class="cstat-no" title="statement not covered" >                vertexPositionBuffer.numItems = vertices.length / 3;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                gl.bindBuffer(gl.ARRAY_BUFFER, texturePositionBuffer);</span>
+<span class="cstat-no" title="statement not covered" >                gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(texturecoordinates), gl.STATIC_DRAW);</span>
+<span class="cstat-no" title="statement not covered" >                texturePositionBuffer.itemSize = 2;</span>
+<span class="cstat-no" title="statement not covered" >                texturePositionBuffer.numItems = texturecoordinates.length / 2;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexPositionBuffer);</span>
+<span class="cstat-no" title="statement not covered" >                gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(indices), gl.STATIC_DRAW);</span>
+<span class="cstat-no" title="statement not covered" >                indexPositionBuffer.itemSize = 1;</span>
+<span class="cstat-no" title="statement not covered" >                indexPositionBuffer.numItems = indices.length;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if (normals.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                    gl.bindBuffer(gl.ARRAY_BUFFER, normalPositionBuffer);</span>
+<span class="cstat-no" title="statement not covered" >                    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(normals), gl.STATIC_DRAW);</span>
+<span class="cstat-no" title="statement not covered" >                    normalPositionBuffer.itemSize = 1;</span>
+<span class="cstat-no" title="statement not covered" >                    normalPositionBuffer.numItems = normals.length / 3;</span>
+                }
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var request = new XMLHttpRequest();</span>
+<span class="cstat-no" title="statement not covered" >            request.open('GET', 'resources/models/' + name + '.js?' + Math.random(), true);</span>
+<span class="cstat-no" title="statement not covered" >            request.send();</span>
+            //var that = this;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            request.onreadystatechange = <span class="fstat-no" title="function not covered" >function() {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if (request.readyState === 4 &amp;&amp; request.status === 200) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    inputData(request.responseText);</span>
+<span class="cstat-no" title="statement not covered" >                    buildBuffers();</span>
+                    //loadManager.loadTotal--;
+<span class="cstat-no" title="statement not covered" >                    pubsub.publish('assetload', 'name');</span>
+                }
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            textureCreator.load(name, false, false, <span class="fstat-no" title="function not covered" >function(t) {</span></span>
+<span class="cstat-no" title="statement not covered" >                texture = t;</span>
+            });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            return {</span>
+                getVertexPositionBuffer: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >                    return vertexPositionBuffer;</span>
+                },
+                getTexturePositionBuffer: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >                    return texturePositionBuffer;</span>
+                },
+                getIndexPositionBuffer: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >                    return indexPositionBuffer;</span>
+                },
+                getNormalPositionBuffer: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >                    return normalPositionBuffer;</span>
+                },
+                getTexture: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >                    return texture;</span>
+                }
+&nbsp;
+&nbsp;
+&nbsp;
+                //loadManager.loadTotal++;
+                // var tc = textureCreator;
+&nbsp;
+                //t.load(name, noflip, repeat);
+&nbsp;
+                //texture = t.getLoadedTexture();
+&nbsp;
+                //texture = textureCreator.getLoadedTexture();
+&nbsp;
+            };
+&nbsp;
+        }
+    };
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Nov 03 2015 02:00:43 GMT+0200 (EET)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

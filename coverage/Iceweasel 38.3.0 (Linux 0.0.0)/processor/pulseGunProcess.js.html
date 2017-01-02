@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for processor/pulseGunProcess.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">processor/</a> pulseGunProcess.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">1% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/100</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/38</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">1% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/100</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="fstat-no" title="function not covered" >function pulseGunProcess(sb, pubsub,helpers) {</span>
+    'use strict';
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var gl = sb.getGL();</span>
+<span class="cstat-no" title="statement not covered" >    var shadermanager = sb.getShaderManager();</span>
+<span class="cstat-no" title="statement not covered" >    var particleProgram3d = shadermanager.useShader('particle3d');</span>
+&nbsp;
+    //var lastTime = 0;
+<span class="cstat-no" title="statement not covered" >    var camera = sb.getCamera();</span>
+    // var particleProgram3d = sm.init('particle3d');
+<span class="cstat-no" title="statement not covered" >    var em = sb.getEntityManager();</span>
+<span class="cstat-no" title="statement not covered" >    var collisions = [];</span>
+<span class="cstat-no" title="statement not covered" >    var positions = [];</span>
+&nbsp;
+    //    var bullet;
+<span class="cstat-no" title="statement not covered" >    var init = <span class="fstat-no" title="function not covered" >function() {</span></span>
+&nbsp;
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var shootBullet = <span class="fstat-no" title="function not covered" >function(ammo, shooter) {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var timeNow = new Date().getTime();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var bulletsAmount = ammo.getBulletsAmount();</span>
+<span class="cstat-no" title="statement not covered" >        var bullets = ammo.getBullets();</span>
+<span class="cstat-no" title="statement not covered" >        var bulletShot = ammo.getBulletShot();</span>
+<span class="cstat-no" title="statement not covered" >        var bulletReloadSpeed = ammo.getBulletReloadSpeed();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (timeNow - bulletReloadSpeed &gt; bulletShot) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            for (var i = 0; i &lt; bulletsAmount; i++) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if (bullets[i].getVisible() === 0) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    ammo.setBulletShot(timeNow);</span>
+<span class="cstat-no" title="statement not covered" >                    bullets[i].setVisible(1);</span>
+<span class="cstat-no" title="statement not covered" >                    bullets[i].setBirthTime(timeNow);</span>
+<span class="cstat-no" title="statement not covered" >                    bullets[i].setAngle(shooter.getAngleY());</span>
+<span class="cstat-no" title="statement not covered" >                    bullets[i].setXPos(shooter.getXPos());</span>
+<span class="cstat-no" title="statement not covered" >                    bullets[i].setZPos(shooter.getZPos());</span>
+<span class="cstat-no" title="statement not covered" >                    break;</span>
+                }
+            }
+        }
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var getCollisions = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >        collisions.length = 0;</span>
+<span class="cstat-no" title="statement not covered" >        for (var e = 0; e &lt; em.entities.length; e++) {</span>
+<span class="cstat-no" title="statement not covered" >            var le = em.entities[e];</span>
+<span class="cstat-no" title="statement not covered" >            if (le.components.CollisionComponent) {</span>
+                //object is dead. no need to check for collisions
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if (le.components.HealthComponent &amp;&amp; le.components.HealthComponent.getAmount() &lt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >                    continue;</span>
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                var c = le.components.CollisionComponent;</span>
+                //var r = le.components.RenderableComponent;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                c.setEntity(le);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                collisions.push(c);</span>
+&nbsp;
+            }
+        }
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var checkCollision = <span class="fstat-no" title="function not covered" >function(pgc) {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var bullets = pgc.getBullets();</span>
+<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; bullets.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            if (bullets[i].getVisible() !== 1) {</span>
+<span class="cstat-no" title="statement not covered" >                continue;</span>
+            }
+<span class="cstat-no" title="statement not covered" >            for (var j = 0; j &lt; collisions.length; j++) {</span>
+<span class="cstat-no" title="statement not covered" >                if (j !== i &amp;&amp;</span>
+                    bullets[i].getXPos() &gt;= collisions[j].getXPos() - collisions[j].getXWidth() &amp;&amp;
+                    bullets[i].getXPos() &lt;= collisions[j].getXPos() + collisions[j].getXWidth() &amp;&amp;
+                    bullets[i].getZPos() &gt;= collisions[j].getZPos() - collisions[j].getZWidth() &amp;&amp;
+                    bullets[i].getZPos() &lt;= collisions[j].getZPos() + collisions[j].getZWidth() &amp;&amp;
+                    collisions[j].getGroup() === 'enemy' &amp;&amp; bullets[i].getVisible() === 1) {
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    pubsub.publish('bulletcollision', collisions[j]);</span>
+&nbsp;
+                }
+            }
+        }
+&nbsp;
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var createShot = <span class="fstat-no" title="function not covered" >function(le) {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (le.components.GunComponent &amp;&amp;</span>
+            le.components.GunComponent.getShooting() === 1 &amp;&amp;
+            le.components.GunComponent.getActiveWeapon() === 1 &amp;&amp;
+            le.components.HealthComponent.getAmount() &gt; 0 &amp;&amp;
+            le.components.PulseGunComponent) {
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            shootBullet(le.components.PulseGunComponent, le.components.RenderableComponent);</span>
+        }
+&nbsp;
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var moveBullets = <span class="fstat-no" title="function not covered" >function(pgc, deltatime) {</span></span>
+<span class="cstat-no" title="statement not covered" >        var timeNow = new Date().getTime();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var bullets = pgc.getBullets();</span>
+<span class="cstat-no" title="statement not covered" >        var bulletsAmount = pgc.getBulletsAmount();</span>
+<span class="cstat-no" title="statement not covered" >        for (var i = 0; i &lt; bulletsAmount; i++) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (timeNow - bullets[i].getDeathtime() &gt; bullets[i].getBirthTime()) {</span>
+<span class="cstat-no" title="statement not covered" >                bullets[i].setVisible(0);</span>
+            }
+            else {
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                var posX = bullets[i].getSpeed() * ( deltatime / 1000.0 ) * Math.cos(helpers.degToRad(bullets[i].getAngle()));</span>
+<span class="cstat-no" title="statement not covered" >                var posZ = bullets[i].getSpeed() * ( deltatime / 1000.0 ) * Math.sin(helpers.degToRad(bullets[i].getAngle()));</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                bullets[i].setXPos(bullets[i].getXPos() + posX);</span>
+<span class="cstat-no" title="statement not covered" >                bullets[i].setZPos(bullets[i].getZPos() - posZ);</span>
+            }
+&nbsp;
+        }
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var update = <span class="fstat-no" title="function not covered" >function(deltatime) {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        getCollisions();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        for (var e = 0; e &lt; em.entities.length; e++) {</span>
+<span class="cstat-no" title="statement not covered" >            var le = em.entities[e];</span>
+<span class="cstat-no" title="statement not covered" >            createShot(le);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (le.components.PulseGunComponent) {</span>
+<span class="cstat-no" title="statement not covered" >                var pgc = le.components.PulseGunComponent;</span>
+<span class="cstat-no" title="statement not covered" >                checkCollision(pgc);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                moveBullets(pgc, deltatime);</span>
+            }
+        }
+&nbsp;
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var draw = <span class="fstat-no" title="function not covered" >function(le) {</span></span>
+&nbsp;
+        //for (var e = 0; e &lt; em.entities.length; e++) {
+        //   var le = em.entities[e];
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (le.components.PulseGunComponent) {</span>
+<span class="cstat-no" title="statement not covered" >            gl.disable(gl.DEPTH_TEST);</span>
+<span class="cstat-no" title="statement not covered" >            gl.enable(gl.BLEND);</span>
+&nbsp;
+            //var pc = le.components.PhotonTorpedoComponent;
+<span class="cstat-no" title="statement not covered" >            var ptc = le.components.PulseGunComponent;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            shadermanager.setProgram(particleProgram3d);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var bullets = ptc.getBullets();</span>
+<span class="cstat-no" title="statement not covered" >            positions.length = 0;</span>
+<span class="cstat-no" title="statement not covered" >            for (var i = 0; i &lt; ptc.getBulletsAmount(); i++) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if (bullets[i].getVisible() !== 1) {</span>
+<span class="cstat-no" title="statement not covered" >                    continue;</span>
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                positions.push(bullets[i].getXPos());</span>
+<span class="cstat-no" title="statement not covered" >                positions.push(bullets[i].getYPos());</span>
+<span class="cstat-no" title="statement not covered" >                positions.push(bullets[i].getZPos());</span>
+&nbsp;
+            }
+<span class="cstat-no" title="statement not covered" >            if (positions.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                camera.mvPushMatrix();</span>
+<span class="cstat-no" title="statement not covered" >                var mvMatrix = camera.getMVMatrix();</span>
+<span class="cstat-no" title="statement not covered" >                var sprite = ptc.getSprite();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                gl.bindBuffer(gl.ARRAY_BUFFER, ptc.getPointStartPositionBuffer());</span>
+<span class="cstat-no" title="statement not covered" >                gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                gl.vertexAttribPointer(particleProgram3d.aVertexPosition, 3, gl.FLOAT, false, 0, 0);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                gl.activeTexture(gl.TEXTURE0);</span>
+<span class="cstat-no" title="statement not covered" >                gl.bindTexture(gl.TEXTURE_2D, sprite.getTexture());</span>
+<span class="cstat-no" title="statement not covered" >                gl.uniform1i(particleProgram3d.samplerUniform, 0);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                gl.uniform4f(particleProgram3d.colorUniform, 1, 1, 1, 1);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                gl.uniform1f(particleProgram3d.pointSize, 64.0);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                gl.uniformMatrix4fv(particleProgram3d.uPMatrix, false, camera.getPMatrix());</span>
+<span class="cstat-no" title="statement not covered" >                gl.uniformMatrix4fv(particleProgram3d.uMVMatrix, false, mvMatrix);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                gl.drawArrays(gl.POINTS, 0, positions.length / 3);</span>
+<span class="cstat-no" title="statement not covered" >                camera.addDrawCall();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                camera.mvPopMatrix();</span>
+&nbsp;
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            gl.enable(gl.DEPTH_TEST);</span>
+<span class="cstat-no" title="statement not covered" >            gl.disable(gl.BLEND);</span>
+&nbsp;
+        }
+&nbsp;
+        //}
+&nbsp;
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return Object.freeze({update, draw, init});</span>
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Nov 03 2015 02:00:43 GMT+0200 (EET)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

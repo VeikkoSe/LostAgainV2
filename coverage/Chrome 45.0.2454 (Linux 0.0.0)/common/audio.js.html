@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/audio.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">common/</a> audio.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">3.85% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">3.85% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/26</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="fstat-no" title="function not covered" >function audio(helpers) {</span>
+    'use strict';
+<span class="cstat-no" title="statement not covered" >    var audioCtx = new (window.AudioContext || window.webkitAudioContext)();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var source;</span>
+    //https://ourmusicbox.com/
+    //TODO: Add correct copyright notices
+<span class="cstat-no" title="statement not covered" >    var sountrack = [</span>
+        './resources/sound/music/150413_Processed_Results---free_download.ogg',
+        './resources/sound/music/150413_Crime_Lab---free_download.ogg',
+        './resources/sound/music/150413_Weird_Electro---free_download.ogg',
+        './resources/sound/music/150413_World_Spinning---free_download.ogg',
+        './resources/sound/music/150413_Victory_Gaze---free_download.ogg'];
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var getData = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >        var url = sountrack[helpers.randomIntFromInterval(0, 4)];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        source = audioCtx.createBufferSource();</span>
+<span class="cstat-no" title="statement not covered" >        var request = new XMLHttpRequest();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        request.open('GET', url, true);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        request.responseType = 'arraybuffer';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        request.onload = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >            var audioData = request.response;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            audioCtx.decodeAudioData(audioData, <span class="fstat-no" title="function not covered" >function(buffer) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    source.buffer = buffer;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    source.connect(audioCtx.destination);</span>
+<span class="cstat-no" title="statement not covered" >                    source.loop = true;</span>
+<span class="cstat-no" title="statement not covered" >                    source.start(0);</span>
+                },
+&nbsp;
+<span class="fstat-no" title="function not covered" >                function(e) {</span>
+<span class="cstat-no" title="statement not covered" >                    alert('Error with decoding audio data' + e.err);</span>
+                });
+&nbsp;
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        request.send();</span>
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var setMasterVolume = <span class="fstat-no" title="function not covered" >function(percent) {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (percent === 0) {</span>
+<span class="cstat-no" title="statement not covered" >            if (typeof source !== 'undefined') {</span>
+<span class="cstat-no" title="statement not covered" >                source.stop();</span>
+            }
+        }
+        else {
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            getData();</span>
+&nbsp;
+        }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var init = <span class="fstat-no" title="function not covered" >function() {</span></span>
+        //getData();
+&nbsp;
+        //source.start(0);
+    };
+<span class="cstat-no" title="statement not covered" >    return Object.freeze({</span>
+        setMasterVolume,
+        init, start: <span class="fstat-no" title="function not covered" >function() {</span>
+        }
+    });
+}
+&nbsp;
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Nov 03 2015 02:52:35 GMT+0200 (EET)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/processor/shieldProcess.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">src/processor/</a> shieldProcess.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">1.49% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/67</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">1.49% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/67</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="fstat-no" title="function not covered" >function shieldProcess(sb) {</span>
+    'use strict';
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var em = sb.getEntityManager();</span>
+<span class="cstat-no" title="statement not covered" >    var shadermanager = sb.getShaderManager();</span>
+<span class="cstat-no" title="statement not covered" >    var program = shadermanager.useShader('per-fragment-lighting');</span>
+<span class="cstat-no" title="statement not covered" >    var camera = sb.getCamera();</span>
+<span class="cstat-no" title="statement not covered" >    var gl = sb.getGL();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var update = <span class="fstat-no" title="function not covered" >function(deltatime, timeSinceStart) {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var timeNow = new Date().getTime();</span>
+<span class="cstat-no" title="statement not covered" >        for (var e = 0; e &lt; em.entities.length; e++) {</span>
+<span class="cstat-no" title="statement not covered" >            var le = em.entities[e];</span>
+<span class="cstat-no" title="statement not covered" >            if (le.components.ShieldComponent) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                var sc = le.components.ShieldComponent;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                var lastHit = sc.getLastShieldAdded();</span>
+<span class="cstat-no" title="statement not covered" >                if (lastHit &gt; 0 &amp;&amp; timeNow - lastHit &gt; 3000) {</span>
+<span class="cstat-no" title="statement not covered" >                    sc.setLastShieldAdded(timeNow);</span>
+<span class="cstat-no" title="statement not covered" >                    if (sc.getAmount() &lt; sc.getMax()) {</span>
+<span class="cstat-no" title="statement not covered" >                        sc.setAmount(sc.getAmount() + 1);</span>
+                    }
+                    else {
+<span class="cstat-no" title="statement not covered" >                        sc.setLastShieldAdded(0);</span>
+                    }
+&nbsp;
+                }
+&nbsp;
+            }
+        }
+&nbsp;
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var draw = <span class="fstat-no" title="function not covered" >function(le) {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var timeNow = new Date().getTime();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (le.components.ShieldComponent &amp;&amp;</span>
+            le.components.RenderableComponent &amp;&amp;
+            le.components.HealthComponent
+&nbsp;
+        ) {
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var rc = le.components.RenderableComponent;</span>
+<span class="cstat-no" title="statement not covered" >            var sc = le.components.ShieldComponent;</span>
+<span class="cstat-no" title="statement not covered" >            var hc = le.components.HealthComponent;</span>
+&nbsp;
+            //we do not render objects wich health is zero
+<span class="cstat-no" title="statement not covered" >            if (</span>
+                sc.getAmount() &lt; 1 ||
+                hc.getAmount() &lt; 1 ||
+                typeof sc.getMesh() === 'undefined') {
+<span class="cstat-no" title="statement not covered" >                return;</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var lastHit = sc.getLastHit();</span>
+<span class="cstat-no" title="statement not covered" >            if (lastHit &gt; 0 &amp;&amp; timeNow - lastHit &lt; 1000) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                camera.mvPushMatrix();</span>
+<span class="cstat-no" title="statement not covered" >                var mvMatrix = camera.getMVMatrix();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                gl.blendFunc(gl.SRC_ALPHA, gl.ONE);</span>
+<span class="cstat-no" title="statement not covered" >                gl.enable(gl.BLEND);</span>
+<span class="cstat-no" title="statement not covered" >                gl.disable(gl.DEPTH_TEST);</span>
+&nbsp;
+                //gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+<span class="cstat-no" title="statement not covered" >                shadermanager.setProgram(program);</span>
+&nbsp;
+                //gl.uniform3fv(this.shaderProgram.uMaterialDiffuse, mc.mesh.diffuse);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                mat4.translate(mvMatrix, [rc.getXPos(), rc.getYPos(), rc.getZPos()]);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if (sc.getScale() !== 1) {</span>
+<span class="cstat-no" title="statement not covered" >                    mat4.scale(mvMatrix, [sc.getScale(), sc.getScale(), sc.getScale()]);</span>
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                gl.uniform1f(program.alphaUniform, 0.5);</span>
+<span class="cstat-no" title="statement not covered" >                gl.uniform1i(program.uDrawColors, 0);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                gl.uniform1i(program.uUseLighting, 1);</span>
+                //model coordinates
+<span class="cstat-no" title="statement not covered" >                gl.uniform3f(program.uLightPosition, 100, 20, 100);</span>
+<span class="cstat-no" title="statement not covered" >                gl.uniform3f(program.uLightAmbient, 0, 0, 0);</span>
+<span class="cstat-no" title="statement not covered" >                gl.uniform3f(program.uLightDiffuse, 0.8, 0.8, 0.8);</span>
+<span class="cstat-no" title="statement not covered" >                gl.uniform3f(program.uLightSpecular, 0.8, 0.8, 0.8);</span>
+<span class="cstat-no" title="statement not covered" >                gl.uniform1f(program.uMaterialShininess, 100.0);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                gl.bindBuffer(gl.ARRAY_BUFFER, sc.getMesh().getVertexPositionBuffer());</span>
+<span class="cstat-no" title="statement not covered" >                gl.vertexAttribPointer(program.aVertexPosition, 3, gl.FLOAT, false, 0, 0);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                gl.bindBuffer(gl.ARRAY_BUFFER, sc.getMesh().getNormalPositionBuffer());</span>
+<span class="cstat-no" title="statement not covered" >                gl.vertexAttribPointer(program.aVertexNormal, 3, gl.FLOAT, false, 0, 0);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                gl.bindBuffer(gl.ARRAY_BUFFER, sc.getMesh().getTexturePositionBuffer());</span>
+<span class="cstat-no" title="statement not covered" >                gl.vertexAttribPointer(program.textureCoordAttribute, 2, gl.FLOAT, false, 0, 0);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                gl.activeTexture(gl.TEXTURE0);</span>
+<span class="cstat-no" title="statement not covered" >                gl.bindTexture(gl.TEXTURE_2D, sc.getMesh().getTexture());</span>
+<span class="cstat-no" title="statement not covered" >                gl.uniform1i(program.samplerUniform, 0);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, sc.getMesh().getIndexPositionBuffer());</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                gl.uniformMatrix4fv(program.uPMatrix, false, camera.getPMatrix());</span>
+<span class="cstat-no" title="statement not covered" >                gl.uniformMatrix4fv(program.uMVMatrix, false, mvMatrix);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                var normalMatrix = mat3.create();</span>
+<span class="cstat-no" title="statement not covered" >                mat4.toInverseMat3(mvMatrix, normalMatrix);</span>
+<span class="cstat-no" title="statement not covered" >                mat3.transpose(normalMatrix);</span>
+<span class="cstat-no" title="statement not covered" >                gl.uniformMatrix3fv(program.uNMatrix, false, normalMatrix);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                gl.drawElements(gl.TRIANGLES, sc.getMesh().getIndexPositionBuffer().numItems, gl.UNSIGNED_SHORT, 0);</span>
+<span class="cstat-no" title="statement not covered" >                camera.addDrawCall();</span>
+<span class="cstat-no" title="statement not covered" >                camera.mvPopMatrix();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                gl.enable(gl.DEPTH_TEST);</span>
+<span class="cstat-no" title="statement not covered" >                gl.disable(gl.BLEND);</span>
+            }
+&nbsp;
+        }
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return Object.freeze({</span>
+        draw, update, init: <span class="fstat-no" title="function not covered" >function() {</span>
+        }
+    });
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Nov 03 2015 01:50:17 GMT+0200 (EET)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

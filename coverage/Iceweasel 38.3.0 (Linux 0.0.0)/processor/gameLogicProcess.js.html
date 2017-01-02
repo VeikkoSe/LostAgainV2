@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for processor/gameLogicProcess.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">processor/</a> gameLogicProcess.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.33% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/43</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.33% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/43</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Created by vge on 10/7/15.
+ * @param {object} sb sandbox
+ * @return {object} Closure
+ */
+<span class="fstat-no" title="function not covered" >function gameLogicProcess(sb, pubsub) {</span>
+    'use strict';
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var em = sb.getEntityManager();</span>
+<span class="cstat-no" title="statement not covered" >    var ec = sb.getEntityCreator();</span>
+<span class="cstat-no" title="statement not covered" >    var routeDoneCalculator = 0;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var init = <span class="fstat-no" title="function not covered" >function() {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        pubsub.subscribe('routeDone', <span class="fstat-no" title="function not covered" >function(name, entity) {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            routeDoneCalculator++;</span>
+<span class="cstat-no" title="statement not covered" >            if (routeDoneCalculator &gt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >                routeDoneCalculator = 0;</span>
+<span class="cstat-no" title="statement not covered" >                pubsub.publish('loadstage', 'levelupstate');</span>
+<span class="cstat-no" title="statement not covered" >                return;</span>
+            }
+<span class="cstat-no" title="statement not covered" >            var ms = em.getEntityByName('mothership');</span>
+<span class="cstat-no" title="statement not covered" >            var rmc = ms.components.RailsMovementComponent;</span>
+&nbsp;
+            //TODO something sparcling to hide the destruction.
+            // possibly destroy when out of screen
+<span class="cstat-no" title="statement not covered" >            em.removeEntityByName('fuel');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var fuelEntity = ec.createFuel(false);</span>
+<span class="cstat-no" title="statement not covered" >            var fuelComponents = fuelEntity.components;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            rmc.setRouteEndXpos(fuelComponents.RenderableComponent.getXPos());</span>
+<span class="cstat-no" title="statement not covered" >            rmc.setRouteEndZpos(fuelComponents.RenderableComponent.getZPos());</span>
+<span class="cstat-no" title="statement not covered" >            rmc.setRouteDone(false);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            ms.components.RailsMovementComponent = rmc;</span>
+&nbsp;
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        pubsub.subscribe('gameover', <span class="fstat-no" title="function not covered" >function(name, b) {</span></span>
+            //alert('game over. Refresh');
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        pubsub.subscribe('enemyDeath', <span class="fstat-no" title="function not covered" >function(name, b) {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var ms = em.getEntityByName('mothership');</span>
+<span class="cstat-no" title="statement not covered" >            var sc = ms.components.ScoreComponent;</span>
+<span class="cstat-no" title="statement not covered" >            sc.setValue(sc.getValue() + 1);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (b.components.RespawnComponent) {</span>
+<span class="cstat-no" title="statement not covered" >                if (b.getName() === 'mine') {</span>
+<span class="cstat-no" title="statement not covered" >                    ec.createMine(ms);</span>
+                }
+<span class="cstat-no" title="statement not covered" >                if (b.getName() === 'destroyer') {</span>
+<span class="cstat-no" title="statement not covered" >                    ec.createDestroyer(ms);</span>
+                }
+<span class="cstat-no" title="statement not covered" >                em.removeEntityById(b.getId());</span>
+&nbsp;
+            }
+&nbsp;
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        pubsub.subscribe('respawn', <span class="fstat-no" title="function not covered" >function(name, b) {</span></span>
+<span class="cstat-no" title="statement not covered" >            var ms = em.getEntityByName('mothership');</span>
+            //if mothership is destroyed we don't respawn
+<span class="cstat-no" title="statement not covered" >            if (ms.components.HealthComponent.getAmount() &gt; 0) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                var ship = em.getEntityByName('ship');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                ship.components.RenderableComponent.setXPos(ms.components.RenderableComponent.getXPos() + 20);</span>
+<span class="cstat-no" title="statement not covered" >                ship.components.RenderableComponent.setZPos(ms.components.RenderableComponent.getZPos() + 20);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                var trailComponents = ship.components.MultiTrailComponent.getTrailComponents();</span>
+<span class="cstat-no" title="statement not covered" >                for (var i = 0; i &lt; trailComponents.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >                    trailComponents[i].resetTrail();</span>
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                ship.components.ShieldComponent.setAmount(3);</span>
+<span class="cstat-no" title="statement not covered" >                ship.components.HealthComponent.setAmount(3);</span>
+            }
+&nbsp;
+        });
+&nbsp;
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return Object.freeze({</span>
+        update: <span class="fstat-no" title="function not covered" >function() {</span>
+&nbsp;
+        }, draw: <span class="fstat-no" title="function not covered" >function() {</span>
+        }, init
+    });
+&nbsp;
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Nov 03 2015 02:00:43 GMT+0200 (EET)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
