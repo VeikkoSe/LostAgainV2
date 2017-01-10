@@ -18,14 +18,24 @@ SETV.EntityManager.prototype.assetsToEntities = function(loadedStructure) {
         var components = entityStructure[i].components;
         for (var j = 0; j < components.length; j++) {
 
-            var Component = new SETV[components[j].name]();
+            var component = {};//components[j].name]();
+
+            //console.log(Component);
             var data = components[j].data;
             for (var key in data) {
                 if (data.hasOwnProperty(key)) {
-                    Component[key] = data[key];
+                    component[key] = data[key];
                 }
             }
-            ent.addComponent(Component);
+            //if(components[j].name ==='ModelComponent') {
+             ////   var m = mat4.create();
+             //   mat4.identity(m);
+             //   component['mvMatrix'] = m;
+
+            //}
+
+            //console.log(component);
+            ent.addComponent(components[j].name,component);
 
         }
     }

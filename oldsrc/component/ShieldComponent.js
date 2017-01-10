@@ -8,5 +8,6 @@ SETV.ShieldComponent = function(amount, sprite, mesh, scale) {
     this.lastShieldAdded = 0;
     this.amount = 20;
     this.scale = null;
+    this.mesh = null;
 
 }

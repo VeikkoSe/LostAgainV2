@@ -15,6 +15,9 @@ SETV.Loader = function(glv, am, em, material, audio, text) {
 
 SETV.Loader.prototype.loadResource = function(path, callback) {
     'use strict';
+
+    //console.log(path);
+
     var request = new XMLHttpRequest();
     request.open('GET', path + '?' + Math.random());
     request.send();
@@ -145,6 +148,8 @@ SETV.Loader.prototype.loadState = function(levelName, callback) {
         var tobeLoaded = 0;
         var loadedData = {};
 
+        //console.log(entities);
+
         loadedData.shaders = {};
         loadedData.models = {};
         loadedData.textures = {};
@@ -253,12 +258,14 @@ SETV.Loader.prototype.loadState = function(levelName, callback) {
             for (var i = 0; i < entlenght; i++) {
 
                 var components = entities[i].components;
+
                 var clength = components.length;
                 for (var j = 0; j < clength; j++) {
 
                     if (entities[i].components[j].name === 'ModelComponent') {
 
                         var model = entities[i].components[j];
+                        //console.log(model.data.mesh);
                         tobeLoaded++;
                         that.loadResource('resources/shader/' + model.data.shader + '.json', shaderAfter);
                         tobeLoaded++;

@@ -6,15 +6,17 @@ SETV.Camera = function(glv, resolutionWidth, resolutionHeight) {
     this._resolutionWidth = resolutionWidth;
     this._resolutionHeight = resolutionHeight;
 
-    this.mvMatrix = mat4.create();
+    this.vMatrix = mat4.create();
     this.pMatrix = mat4.create();
+    this.mvMatrix = mat4.create();
 
     this._fov = 70;
     this.x = 0;
-    this.z = -300;
+    this.z = -150;
     this.y = 0;
 
     //Initialize Perspective matrix
+    mat4.identity(this.vMatrix);
     mat4.identity(this.pMatrix);
     mat4.identity(this.mvMatrix);
     this._drawCalls = 0;
@@ -31,9 +33,16 @@ SETV.Camera.prototype.setPerspective = function() {
 SETV.Camera.prototype.setYellowClear = function() {
     "use strict";
     var gl = this._glv.getGL();
-    gl.clearColor(1.0, 1.0, 0.0, 0.5);
+    gl.clearColor(1.0, 1.0, 0.0, 1.0);
 
-}
+};
+
+SETV.Camera.prototype.setBlackClear = function() {
+    "use strict";
+    var gl = this._glv.getGL();
+    gl.clearColor(0.0, 0.0, 0.0, 1.0);
+
+};
 
 SETV.Camera.prototype.lookAt = function(epos, direction) {
     'use strict';

@@ -24,9 +24,10 @@ SETV.Entity.prototype.hasComponent = function(name) {
 
 };
 
-SETV.Entity.prototype.addComponent = function(component) {
+SETV.Entity.prototype.addComponent = function(name,variables) {
     'use strict';
     this._componentCount++;
-    this.components[component.name] = component;
+    //console.log(component);
+    this.components[name] = variables;
 };
 

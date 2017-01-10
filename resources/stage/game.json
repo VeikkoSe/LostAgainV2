@@ -5,7 +5,6 @@
   ],
   "font": "base",
   "entities": [
-
     {
       "name": "music",
       "components": [
@@ -19,6 +18,38 @@
               "150413_World_Spinning---free_download",
               "150413_Victory_Gaze---free_download"
             ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Shipshield",
+      "components": [
+        {
+          "name": "HealthComponent",
+          "data": {
+            "amount":5
+          }
+        },
+        {
+          "name": "ScaleComponent",
+          "data": {
+            "scale":10
+          }
+        },
+        {
+          "name": "ModelComponent",
+          "data": {
+            "mesh": "shieldbubble",
+            "shader": "per-fragment-lighting",
+            "texture": "shieldbubble",
+            "opaque": 0
+          }
+        },
+        {
+          "name": "JoinComponent",
+          "data": {
+            "parent": "ship"
           }
         }
       ]
@@ -39,26 +70,35 @@
           }
         },
         {
+          "name": "HealthComponent",
+          "data": {
+            "amount":5
+          }
+
+        },
+        {
           "name": "ModelComponent",
           "data": {
             "mesh": "ship",
             "shader": "per-fragment-lighting",
-            "texture": "ship"
+            "texture": "ship",
+            "opaque": 1
           }
         },
         {
-          "name": "RenderableComponent",
+          "name": "PositionComponent",
+          "data": {
+            "xPos": 0,
+            "yPos": 0,
+            "zPos": 0
+          }
+        },
+        {
+          "name": "RotationComponent",
           "data": {
             "angleX": 0,
             "angleY": 0,
-            "angleZ": 0,
-            "xPos": 0,
-            "yPos": 0,
-            "zPos": 0,
-            "scale": 1,
-            "xWidth": 5,
-            "yWidth": 5,
-            "zWidth": 5
+            "angleZ": 0
           }
         },
         {
@@ -74,16 +114,6 @@
             "velocityY": 0,
             "velocityZ": 0
           }
-        },
-        {
-          "name": "ShieldComponent",
-          "data": {
-            "max": 10,
-            "lastHit" : 0,
-            "lastShieldAdded" : 0,
-            "amount" :20,
-            "scale" : 1
-          }
         }
       ]
     },
@@ -95,19 +125,8 @@
           "data": {
             "mesh": "mothership",
             "shader": "per-fragment-lighting",
-            "texture": "mothership"
-          }
-        },
-        {
-          "name": "JumpAreaComponent",
-          "data": {
-            "radius" :300,
-            "pointAmount" : 200,
-            "xPos" : 0,
-            "yPos" : 0,
-            "zPos" : 0,
-            "visible" : "true"
-
+            "texture": "mothership",
+            "opaque": 1
           }
         },
         {
@@ -119,18 +138,19 @@
           }
         },
         {
-          "name": "RenderableComponent",
+          "name": "PositionComponent",
           "data": {
-            "angleX": 0,
-            "angleY": 0,
-            "angleZ": 0,
             "xPos": 0,
-            "yPos": 97,
-            "zPos": 0,
-            "scale": 1,
-            "xWidth": 5,
-            "yWidth": 5,
-            "zWidth": 5
+            "yPos": 20,
+            "zPos": 0
+          }
+        },
+        {
+          "name": "RotationComponent",
+          "data": {
+            "angleX": 1,
+            "angleY": 0,
+            "angleZ": 0
           }
         }
       ]

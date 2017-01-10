@@ -12,104 +12,87 @@ GAME.ShipMovementProcess.prototype.draw = function() {
 };
 GAME.ShipMovementProcess.prototype.update = function(input,deltatime,ent) {
     'use strict';
-    //
-    //console.log(ent);
-    //var entities = ent;
+
     var le = ent;
 
-            //Momentum movement
-            if (le.components.ShipMovementComponent && le.components.RenderableComponent) {
+    //Momentum movement
+    if (le.components.ShipMovementComponent && le.components.PositionComponent && le.components.RotationComponent) {
 
-                var sm = le.components.ShipMovementComponent;
-                sm.rotatingLeft =0;
-                sm.rotatingRight =0;
-                sm.currentlyAccelerating = 0;
-                //le.components.GunComponent.setShooting(0);
+        var sm = le.components.ShipMovementComponent;
+        var pc = le.components.PositionComponent;
+        var rc = le.components.RotationComponent;
 
-                //up arrow
-                if (input.keyboard[38]) {
-                    sm.currentlyAccelerating = 1;
-                }
-                //left
-                if (input.keyboard[37]) {
-                    sm.rotatingLeft = 1;
-                }
-                //right
-                if (input.keyboard[39]) {
-                    sm.rotatingRight = 1;
-                }
-                //spacebar
-                if (input.keyboard[32]) {
-                    //le.components.GunComponent.setShooting(1);
-                }
-            //}
+        sm.rotatingLeft =0;
+        sm.rotatingRight =0;
+        sm.currentlyAccelerating = 0;
+        //le.components.GunComponent.setShooting(0);
 
-            //if (le.components.ShipMovementComponent ) {
-
-                //var mm = le.components.ShipMovementComponent;
-                var re = le.components.RenderableComponent;
-
-                if (sm.currentlyAccelerating === 1) {
-
-                    var dirVectorX = Math.cos(re.angleY);
-                    var dirVectorZ = Math.sin(re.angleY);
-
-                    var tx = sm.velocityX;
-                    var tz = sm.velocityZ;
-
-                    tx += sm.acceleration * dirVectorX;
-                    tz += sm.acceleration * dirVectorZ;
-
-                    //console.log(tx);
-                    //console.log(tz);
-
-                    var posX = (tx < 0) ? tx * -1 : tx;
-                    var posZ = (tz < 0) ? tz * -1 : tz;
+        //up arrow
+        if (input.keyboard[38]) {
+            sm.currentlyAccelerating = 1;
+        }
+        //left
+        if (input.keyboard[37]) {
+            sm.rotatingLeft = 1;
+        }
+        //right
+        if (input.keyboard[39]) {
+            sm.rotatingRight = 1;
+        }
 
 
+        if (sm.currentlyAccelerating === 1) {
 
-                    //we cant go past top speed on x or z axel but allow deasselerating
-                    if (posX < sm.maxSpeed && posZ < sm.maxSpeed) {
+            var dirVectorX = Math.cos(rc.angleY);
+            var dirVectorZ = Math.sin(rc.angleY);
 
-                        sm.velocityX = tx;
-                        sm.velocityZ = tz;
-                    }
-                }
+            var tx = sm.velocityX;
+            var tz = sm.velocityZ;
 
+            tx += sm.acceleration * dirVectorX;
+            tz += sm.acceleration * dirVectorZ;
 
-                if (sm.rotatingRight === 1) {
-
-                    if (re.angleY >= 2*Math.PI) {
-                        re.angleY = 0;
-                    }
-                    if (re.angleY < 0) {
-                        re.angleY =2*Math.PI;
-                    }
-
-                    re.angleY = re.angleY - sm.turnSpeed * (deltatime / 1000);
-                }
-                if (sm.rotatingLeft === 1) {
-
-                    if (re.angleY >= 2*Math.PI) {
-                        re.angleY = 0;
-                    }
-
-                    if (re.angleY < 0) {
-                        re.angleY = 2*Math.PI;
-                    }
-
-                    re.angleY = re.angleY + sm.turnSpeed * (deltatime / 1000);
-
-                }
+            var posX = (tx < 0) ? tx * -1 : tx;
+            var posZ = (tz < 0) ? tz * -1 : tz;
 
 
-                //console.log(sm.velocityX);
-                re.xPos += sm.velocityX * (deltatime / 1000);
-                re.zPos -= sm.velocityZ * (deltatime / 1000);
+            //we cant go past top speed on x or z axel but allow deasselerating
+            if (posX < sm.maxSpeed && posZ < sm.maxSpeed) {
 
-                //console.log(re.xPos,re.zPos);
+                sm.velocityX = tx;
+                sm.velocityZ = tz;
+            }
+        }
+
+        if (sm.rotatingRight === 1) {
+
+            if (rc.angleY >= 2*Math.PI) {
+                rc.angleY = 0;
+            }
+            if (rc.angleY < 0) {
+                rc.angleY =2*Math.PI;
             }
 
-        //}
+            rc.angleY = rc.angleY - sm.turnSpeed * (deltatime / 1000);
+        }
+        if (sm.rotatingLeft === 1) {
+
+            if (rc.angleY >= 2*Math.PI) {
+                rc.angleY = 0;
+            }
+
+            if (rc.angleY < 0) {
+                rc.angleY = 2*Math.PI;
+            }
+
+            rc.angleY = rc.angleY + sm.turnSpeed * (deltatime / 1000);
+
+        }
+
+        pc.xPos += sm.velocityX * (deltatime / 1000);
+        pc.zPos -= sm.velocityZ * (deltatime / 1000);
+
+    }
+
 };
 

@@ -1,7 +1,8 @@
 /* global GAME */
-GAME.GameState = function(glv, plist, em, camera, actionMapper, audio, material,renderer) {
+GAME.GameState = function(glv, plist, em, camera, actionMapper, audio, material,meshRenderer) {
     'use strict';
-    this._meshRenderer = renderer;
+    this._meshRenderer = meshRenderer;
+
     this._audio = audio;
     this._processList = plist;
     this._glv = glv;
@@ -24,6 +25,10 @@ GAME.GameState.prototype.init = function() {
 
     this._camera.setPerspective();
     this._camera.setYellowClear();
+
+    var gl = this._glv.getGL();
+    gl.clearColor(0.0, 0.0, 0.0, 1.0);
+    gl.enable(gl.DEPTH_TEST);
 
     this._audio.startMusic(1, 0, true);
     //this._audio.playSound('mothershipMotor', 0, true);
@@ -91,7 +96,7 @@ GAME.GameState.prototype.draw = function() {
 
     this._drawables.length = 0;
 
-    var drawables =[];
+
 
     for (var d = 0; d < pl; d++) {
 
@@ -99,13 +104,13 @@ GAME.GameState.prototype.draw = function() {
             var drawable = this._processList[d].draw(entities[c]);
 
             if(drawable) {
-                drawables.push(drawable);
+                this._drawables.push(drawable);
             }
         }
     }
-   //delete(this._drawables[0]);
-    //this._drawables.length = 1;
-    this._meshRenderer.render(drawables);
+    //console.log(this._drawables);
+
+    this._meshRenderer.render(this._drawables);
 
     this._material.drawPostProcess();
 

@@ -173,6 +173,10 @@ SETV.Material.prototype.setUniform = function(type, variable, value) {
             gl.uniform1i(program[variable], value);
             this._uniforms[this._currentProgram][variable] = value;
             break;
+        case 'float':
+            gl.uniform1f(program[variable], value);
+            this._uniforms[this._currentProgram][variable] = value;
+            break;
     }
 
 };

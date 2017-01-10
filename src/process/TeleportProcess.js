@@ -21,7 +21,7 @@ GAME.TeleportProcess.prototype.update = function(deltatime, totalElapsed) {
         var ms = this._em.getEntityByName('mothership');
         var ship = this._em.getEntityByName('ship');
 
-        if (ms && ship) {
+        if (ms && ship && ms.components.JumpAreaComponent ) {
 
 
 
