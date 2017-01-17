@@ -1,7 +1,9 @@
 /*global SETV,mat4,mat3,console */
-SETV.RenderProcess = function(glv, camera, material, am) {
+SETV.RenderProcess = function(glv, camera, material, am,em) {
     'use strict';
 
+
+    this._em = em;
     this._glv = glv;
     this._material = material;
     this._am = am;
@@ -60,32 +62,39 @@ SETV.RenderProcess.prototype.draw = function(le) {
 
         if(le.components.PositionComponent) {
             var pc = le.components.PositionComponent;
-
-            this._position[0] = pc.xPos;
-            this._position[1] = pc.yPos;
-            this._position[2] = pc.zPos;
-
-            mat4.translate(mvMatrix, this._position);
+            if(le.parent==='') {
+                //multiply a * b return c
+                mat4.multiply(mvMatrix,pc.world,mvMatrix);
+                mat4.multiply(mvMatrix,pc.local,mvMatrix);
+            }
+            else {
+                var parentPc = this._em.getParentPosition(le.parent);
+                if(!parentPc) {
+                    throw new Error('no parent for name: ' + le.parent);
+                }
+                mat4.multiply(mvMatrix,parentPc.world,mvMatrix);
+                mat4.multiply(mvMatrix,pc.local,mvMatrix);
+            }
         }
 
-        if(le.components.RotationComponent) {
-            var rc = le.components.RotationComponent;
+        //if(le.components.RotationComponent) {
+        //    var rc = le.components.RotationComponent;
 
-            mat4.rotate(mvMatrix, rc.angleY, this._yArray);
-            mat4.rotate(mvMatrix, rc.angleZ, this._zArray);
-            mat4.rotate(mvMatrix, rc.angleX, this._xArray);
+        //    mat4.rotate(mvMatrix, rc.angleY, this._yArray);
+        //    mat4.rotate(mvMatrix, rc.angleZ, this._zArray);
+        //    mat4.rotate(mvMatrix, rc.angleX, this._xArray);
 
-        }
+        //}
 
-        if(le.components.ScaleComponent) {
+        //if(le.components.ScaleComponent) {
 
-            var sc =le.components.ScaleComponent;
-            this._scale[0] = sc.scale;
-            this._scale[1] = sc.scale;
-            this._scale[2] = sc.scale;
+        //    var sc =le.components.ScaleComponent;
+        //    this._scale[0] = sc.scale;
+        //    this._scale[1] = sc.scale;
+        //   this._scale[2] = sc.scale;
 
-            mat4.scale(mvMatrix, this._scale);
-        }
+        //    mat4.scale(mvMatrix, this._scale);
+        //}
 
         this._normalMatrix = this.resetMat3(this._normalMatrix);
 
@@ -101,12 +110,12 @@ SETV.RenderProcess.prototype.draw = function(le) {
         //uniforms
 
         //console.log(mc);
-        if(mc.opaque===1) {
-            uniforms[3] = {'uniformType': 'float', 'uniformName': 'uAlpha', 'uniformValue': 1.0};
+        if(mc.opaque!==1) {
+            uniforms[3] = {'uniformType': 'float', 'uniformName': 'uAlpha', 'uniformValue': mc.opaque};
         }
         else {
 
-            uniforms[3] = {'uniformType': 'float', 'uniformName': 'uAlpha', 'uniformValue': 0.2};
+            uniforms[3] = {'uniformType': 'float', 'uniformName': 'uAlpha', 'uniformValue': 1.0};
         }
 
 
@@ -114,7 +123,7 @@ SETV.RenderProcess.prototype.draw = function(le) {
 
 
         var pointers = [];
-        console.log(uniforms);
+
         pointers[0] = {'pointerType': 'aVertexPosition', 'pointerValue': mesh.vertexPositionBuffer, 'pointerLength': 3};
         pointers[1] = {'pointerType': 'aVertexNormal', 'pointerValue': mesh.normalPositionBuffer, 'pointerLength': 3};
         pointers[2] = {'pointerType': 'aTextureCoord', 'pointerValue': mesh.texturePositionBuffer, 'pointerLength': 2};
@@ -131,13 +140,14 @@ SETV.RenderProcess.prototype.draw = function(le) {
         //pointers/attributes
         renderable[3] = uniforms;
         renderable[4] = pointers;
-        renderable[5] = 0;
+        renderable[5] = 1;
 
-        if(mc.opaque===1) {
 
-            renderable[5] = 1;
+        if(mc.opaque!==1) {
+            renderable[5] = 0;
         }
-
+        //render mode (check Render.js)
+        renderable[6] = 1;
 
 
 

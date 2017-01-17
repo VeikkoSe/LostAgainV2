@@ -15,6 +15,7 @@ SETV.EntityManager.prototype.assetsToEntities = function(loadedStructure) {
     for (var i = 0; i < entityStructure.length; i++) {
 
         var ent = this.addNew(entityStructure[i].name);
+        ent.parent = entityStructure[i].parent;
         var components = entityStructure[i].components;
         for (var j = 0; j < components.length; j++) {
 
@@ -27,18 +28,36 @@ SETV.EntityManager.prototype.assetsToEntities = function(loadedStructure) {
                     component[key] = data[key];
                 }
             }
-            //if(components[j].name ==='ModelComponent') {
-             ////   var m = mat4.create();
-             //   mat4.identity(m);
-             //   component['mvMatrix'] = m;
 
-            //}
-
-            //console.log(component);
             ent.addComponent(components[j].name,component);
 
         }
     }
+
+};
+
+SETV.EntityManager.prototype.getParentPosition = function(parentName) {
+    'use strict';
+
+    for(var i=0;i<this._entities.length;i++) {
+        var entity = this._entities[i];
+        //console.log(parentName);
+        if(entity._name===parentName) {
+            //console.log(entity.components.PositionComponent);
+            if(entity.components.PositionComponent) {
+                return entity.components.PositionComponent;
+            }
+            else {
+                return this.getParentPosition(entity.parent);
+            }
+        }
+    }
+    return false;
+
+};
+
+SETV.EntityManager.prototype.loopEntities = function(parentName) {
+    "use strict";
 
 };
 

@@ -96,18 +96,18 @@ document.addEventListener('DOMContentLoaded', function() {
     processlist.push(new SETV.FPSCameraControllerProcess(camera));
     //processlist.push(new GAME.LayoutProcess());
     //processlist.push(new SETV.RotationProcess());
-    processlist.push(new SETV.RenderProcess(glv, camera, material,assetManager));
+    processlist.push(new SETV.RenderProcess(glv, camera, material,assetManager, entityManager));
     //processlist.push(new GAME.ScoreProcess(text,entityManager));
     //processlist.push(new GAME.ShieldProcess(glv,entityManager,camera));
-    //processlist.push(new GAME.ShipMovementProcess(entityManager));
-    //processlist.push(new GAME.SteeringProcess());
-    //processlist.push(new GAME.TeleportProcess(glv,entityManager,material,camera,helpers));
+    processlist.push(new GAME.ShipMovementProcess(entityManager));
+    processlist.push(new GAME.SteeringProcess());
+    processlist.push(new GAME.TeleportProcess(glv,entityManager,material,camera,helpers));
     //processlist.push(new SETV.Text2DProcess(glv,material,text,camera,assetManager));
     //processlist.push(new SETV.Text3DProcess(glv,camera,material,assetManager,text));
 
-    var meshRenderer = new SETV.MeshRenderer(glv, camera, material, assetManager);
+    var renderer = new SETV.Renderer(glv, camera, material, assetManager);
 
-    var gamestate = new GAME.GameState(glv, processlist,entityManager,camera,actionMapper,audio,material,meshRenderer);
+    var gamestate = new GAME.GameState(glv, processlist,entityManager,camera,actionMapper,audio,material,renderer);
 
 
     //we pass the states to statemanager that handles changes

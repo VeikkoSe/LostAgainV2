@@ -79,7 +79,7 @@ SETV.FPSCameraControllerProcess.prototype.update = function(input) {
     }
 
 
-    mat4.lookAt([0, 70, 60], [0, 0, -1], [0, 1, 0], this._camera.mvMatrix);
+    mat4.lookAt([0, 0,60], [0, 0, -1], [0, 1, 0], this._camera.mvMatrix);
     //mat4.identity(this._camera.mvMatrix);
 
     //mat4.rotate(this._camera.mvMatrix, this.degToRad(this._worldRotY), this._XAxisRotation);

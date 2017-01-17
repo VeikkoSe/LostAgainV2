@@ -24,11 +24,11 @@ GAME.GameState.prototype.init = function() {
     //var pMatrix = this._camera.getPMatrix();
 
     this._camera.setPerspective();
-    this._camera.setYellowClear();
+    this._camera.setBlackClear();
 
-    var gl = this._glv.getGL();
-    gl.clearColor(0.0, 0.0, 0.0, 1.0);
-    gl.enable(gl.DEPTH_TEST);
+    //var gl = this._glv.getGL();
+    //gl.clearColor(0.0, 0.0, 0.0, 1.0);
+    //gl.enable(gl.DEPTH_TEST);
 
     this._audio.startMusic(1, 0, true);
     //this._audio.playSound('mothershipMotor', 0, true);
@@ -48,6 +48,9 @@ GAME.GameState.prototype.update = function() {
     var timeNow = new Date().getTime();
 
     this._frameCount++;
+
+
+
 
     if (this._lastTime !== 0) {
 

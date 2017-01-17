@@ -7,7 +7,6 @@
   "entities": [
     {
       "name": "music",
-      "parent": "",
       "components": [
         {
           "name": "MusicComponent",
@@ -24,68 +23,7 @@
       ]
     },
     {
-      "name": "ship",
-      "parent": "",
-      "components": [
-        {
-          "name": "SoundComponent",
-          "data": {
-            "clips": {
-              "laser1": "cut_248293__chocobaggy__weird-laser-gun_gainmodified",
-              "laser2": "174459__yottasounds__laser-003",
-              "laser3": "28917__junggle__btn107",
-              "mothershipMotor": "mothership_loop",
-              "explosion": "80401__steveygos93__explosion2_gainmodified"
-            }
-          }
-        },
-        {
-          "name": "HealthComponent",
-          "data": {
-            "amount":5
-          }
-        },
-        {
-          "name": "ModelComponent",
-          "data": {
-            "mesh": "ship",
-            "shader": "per-fragment-lighting",
-            "texture": "ship",
-            "opaque": 1
-          }
-        },
-        {
-          "name": "PositionComponent",
-          "data": {
-            "world": [
-            1,    0,    0,   0,
-            0,    1,    0,   0,
-            0,    0,    1,   0,
-            5,    15,    0,   1
-            ],
-            "local": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
-
-          }
-        },
-        {
-          "name": "ShipMovementComponent",
-          "data": {
-            "turnSpeed": 5,
-            "maxSpeed": 50,
-            "acceleration": 20,
-            "accelerationOn": 0,
-            "rotateLeft": 0,
-            "rotateRight": 0,
-            "velocityX": 0,
-            "velocityY": 0,
-            "velocityZ": 0
-          }
-        }
-      ]
-    },
-    {
-      "name": "shipshield",
-      "parent": "ship",
+      "name": "Shipshield",
       "components": [
         {
           "name": "HealthComponent",
@@ -109,21 +47,78 @@
           }
         },
         {
+          "name": "JoinComponent",
+          "data": {
+            "parent": "ship"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ship",
+      "components": [
+        {
+          "name": "SoundComponent",
+          "data": {
+            "clips": {
+              "laser1": "cut_248293__chocobaggy__weird-laser-gun_gainmodified",
+              "laser2": "174459__yottasounds__laser-003",
+              "laser3": "28917__junggle__btn107",
+              "mothershipMotor": "mothership_loop",
+              "explosion": "80401__steveygos93__explosion2_gainmodified"
+            }
+          }
+        },
+        {
+          "name": "HealthComponent",
+          "data": {
+            "amount":5
+          }
+
+        },
+        {
+          "name": "ModelComponent",
+          "data": {
+            "mesh": "ship",
+            "shader": "per-fragment-lighting",
+            "texture": "ship",
+            "opaque": 1
+          }
+        },
+        {
           "name": "PositionComponent",
           "data": {
-            "local": [
-              1,    0,    0,   0,
-              0,    1,    0,   0,
-              0,    0,    1,   0,
-              6,    5,    6,   1
-            ]
+            "xPos": 0,
+            "yPos": 0,
+            "zPos": 0
+          }
+        },
+        {
+          "name": "RotationComponent",
+          "data": {
+            "angleX": 0,
+            "angleY": 0,
+            "angleZ": 0
+          }
+        },
+        {
+          "name": "ShipMovementComponent",
+          "data": {
+            "turnSpeed": 5,
+            "maxSpeed": 50,
+            "acceleration": 20,
+            "accelerationOn": 0,
+            "rotateLeft": 0,
+            "rotateRight": 0,
+            "velocityX": 0,
+            "velocityY": 0,
+            "velocityZ": 0
           }
         }
       ]
     },
     {
       "name": "mothership",
-      "parent":"",
       "components": [
         {
           "name": "ModelComponent",
@@ -145,13 +140,9 @@
         {
           "name": "PositionComponent",
           "data": {
-            "world": [
-              1,    0,    0,   0,
-              0,    1,    0,   0,
-              0,    0,    1,   0,
-              0,    20,    0,   1
-            ],
-            "local": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
+            "xPos": 0,
+            "yPos": 20,
+            "zPos": 0
           }
         },
         {
@@ -166,7 +157,6 @@
     },
     {
       "name": "mineenemy",
-      "parent":"",
       "components": [
         {
           "name": "ModelComponent",
@@ -180,13 +170,9 @@
         {
           "name": "PositionComponent",
           "data": {
-            "world": [
-              1,    0,    0,   0,
-              0,    1,    0,   0,
-              0,    0,    1,   0,
-              30,   30,    0,   1
-            ],
-            "local": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
+            "xPos": 30,
+            "yPos": 30,
+            "zPos": 0
           }
         }
 
@@ -194,7 +180,6 @@
     },
     {
       "name": "destroyerenemy",
-      "parent":"",
       "components": [
         {
           "name": "ModelComponent",
@@ -208,13 +193,9 @@
         {
           "name": "PositionComponent",
           "data": {
-            "world": [
-              1,    0,    0,   0,
-              0,    1,    0,   0,
-              0,    0,    1,   0,
-              -30,    -30,    0,   1
-            ],
-            "local": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
+            "xPos": -30,
+            "yPos": -30,
+            "zPos": 0
           }
         }
 
@@ -222,7 +203,6 @@
     },
     {
       "name": "baseenemy",
-      "parent":"",
       "components": [
         {
           "name": "ModelComponent",
@@ -236,16 +216,31 @@
         {
           "name": "PositionComponent",
           "data": {
-            "world": [
-              1,    0,    0,   0,
-              0,    1,    0,   0,
-              0,    0,    1,   0,
-              -10, -10, 0,   1
-            ],
-            "local": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
+            "xPos": -10,
+            "yPos": -10,
+            "zPos": 0
           }
         }
 
+      ]
+    },
+    {
+      "name":"jumparea",
+      "components":[
+
+        {
+          "name": "JumpareaComponent",
+          "data": {
+            "radius": 300,
+            "pointAmount": 200
+          }
+        },
+        {
+          "name": "JoinComponent",
+          "data": {
+            "parent": "mothership"
+          }
+        }
       ]
     }
 

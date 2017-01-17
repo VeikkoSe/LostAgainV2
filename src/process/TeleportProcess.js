@@ -16,13 +16,19 @@ GAME.TeleportProcess = function(glv,em,material,camera,helpers) {
     };
     //}
 
-GAME.TeleportProcess.prototype.update = function(deltatime, totalElapsed) {
+GAME.TeleportProcess.prototype.update = function(input,elapsed,entity) {
     'use strict';
-        var ms = this._em.getEntityByName('mothership');
+        //var ms = this._em.getEntityByName('mothership');
         var ship = this._em.getEntityByName('ship');
 
-        if (ms && ship && ms.components.JumpAreaComponent ) {
 
+
+
+        if (ship && entity.components.JumpareaComponent) {
+
+            var pc = entity.components.PositionComponent;
+            var jc = entity.components.JumpareaComponent;
+            var spc =ship.components.PositionComponent;
 
 
 
@@ -30,22 +36,22 @@ GAME.TeleportProcess.prototype.update = function(deltatime, totalElapsed) {
             //ms.components.JumpAreaComponent.visible = true;
 
             //TODO: change to vectors
-            ms.components.JumpAreaComponent.points =
-                this._helpers.circleXY(ms.components.RenderableComponent.xPos,
-                    0,
-                    ms.components.RenderableComponent.zPos,
-                    ms.components.JumpAreaComponent.radius,
-                    ms.components.JumpAreaComponent.pointAmount);
+            //jc.points =
+            //    this._helpers.circleXY(pc.xPos,
+            //        0,
+            //        pc.zPos,
+            //        jc.radius,
+            //        jc.pointAmount);
 
-            if (!this._helpers.isInCircle(ms.components.RenderableComponent.xPos,
-                    ms.components.RenderableComponent.zPos,
-                    ms.components.JumpAreaComponent.radius,
-                    ship.components.RenderableComponent.xPos,
-                    ship.components.RenderableComponent.zPos)
+            if (!this._helpers.isInCircle(pc.xPos,
+                    pc.zPos,
+                    jc.radius,
+                    spc.xPos,
+                    spc.zPos)
             ) {
 
-                var dirX = ms.components.RenderableComponent.xPos - ship.components.RenderableComponent.xPos;
-                var dirZ = ms.components.RenderableComponent.zPos - ship.components.RenderableComponent.zPos;
+                var dirX = pc.xPos - spc.xPos;
+                var dirZ = pc.zPos - spc.zPos;
 
                 var origHyp = Math.sqrt(dirX * dirX + dirZ * dirZ);
 
@@ -54,14 +60,14 @@ GAME.TeleportProcess.prototype.update = function(deltatime, totalElapsed) {
                 var dirZnormal = dirZ / origHyp;
 
                 //we get new vector that is in same direction but always inside the circle
-                dirX = (ms.components.JumpAreaComponent.radius - 1) * dirXnormal;
-                dirZ = (ms.components.JumpAreaComponent.radius - 1) * dirZnormal;
+                dirX = (jc.radius - 1) * dirXnormal;
+                dirZ = (pc.radius - 1) * dirZnormal;
 
-                var posx = dirX + ms.components.RenderableComponent.xPos;
-                var posZ = dirZ + ms.components.RenderableComponent.zPos;
+                var posx = dirX + pc.xPos;
+                var posZ = dirZ + pc.zPos;
 
-                ship.components.RenderableComponent.xPos = posx;
-                ship.components.RenderableComponent.zPos = posZ;
+                spc.xPos = posx;
+                spc.zPos = posZ;
 
                 //for (var i = 0; i < ship.components.MultiExhaustComponent.exhaustComponents.length; i++) {
                 //   ship.components.MultiExhaustComponent.exhaustComponents[i].points = [];
@@ -106,7 +112,7 @@ GAME.TeleportProcess.prototype.draw = function(le) {
         }
 */
     };
-
+/*
 GAME.TeleportProcess.prototype.isInRectangle = function(centerX, centerY, radius, x, y) {
         return x >= centerX - radius && x <= centerX + radius &&
             y >= centerY - radius && y <= centerY + radius;
@@ -125,7 +131,7 @@ GAME.TeleportProcess.prototype.getOppositeAngle = function(angle) {
         return ret;
 
     };
-
+*/
 
 
 

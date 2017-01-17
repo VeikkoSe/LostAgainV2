@@ -8,7 +8,10 @@ SETV.JoinProcess = function(glv, em, camera) {
 };
 SETV.JoinProcess.prototype.update = function(input, elapsed, entity) {
     'use strict';
+    if (entity.components.JoinComponent) {
 
+
+    }
 
 };
 

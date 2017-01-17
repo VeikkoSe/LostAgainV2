@@ -30,11 +30,7 @@ SETV.Material.prototype.setProgram = function(programName) {
 
         gl.useProgram(this._allPrograms[programName]);
         this._currentProgram = programName;
-
-        //this._uniforms.length = 0;
-        //this._pointers.length = 0;
     }
-
     return this._allPrograms[programName];
 };
 
